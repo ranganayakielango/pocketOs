@@ -1,0 +1,38 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package demotest;
+
+/**
+ *
+ * @author ranganayaki
+ */
+    import java.sql.*;  
+    import java.io.*;  
+    public class RetrieveFile {  
+    public static void main(String[] args) {  
+    try{  
+    Class.forName("oracle.jdbc.driver.OracleDriver");  
+    Connection con=DriverManager.getConnection(  
+    "jdbc:oracle:thin:@localhost:1521:orcl","SYSTEM","goldblock");  
+          
+    PreparedStatement ps=con.prepareStatement("select * from imgtable");  
+    ResultSet rs=ps.executeQuery();  
+    if(rs.next()){//now on 1st row  
+                  
+    Blob b=rs.getBlob(2);//2 means 2nd column data  
+    byte barr[]=b.getBytes(1,(int)b.length());//1 means first image  
+                  
+    FileOutputStream fout=new FileOutputStream("f:\\sonoo.jpg");  
+    fout.write(barr);  
+                  
+    fout.close();  
+    }//end of if  
+    System.out.println("ok");  
+                  
+    con.close();  
+    }catch (Exception e) {e.printStackTrace();  }  
+    }  
+    }  

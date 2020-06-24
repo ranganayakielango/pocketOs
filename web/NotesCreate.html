@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>NOTES</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div{background-color:rgba(30,5,20,0.4);text-align:center;text-transformation:uppercase;width:40%;height:450px;}
+        body{font-family:calibri;background-image: url("bg.jpg")}
+        .but{
+            background-color: black;
+            color:white;
+            padding: 14px 25px;
+            text-align: center; 
+            text-decoration: none;
+            display: inline-block;
+        }
+        .but:hover, .but:active {
+            background-color:white;
+                color:black;
+                }
+        .tx{
+            width: 80%;
+            height: 200px;
+            background-color: rgba(255,255,255,0.2);
+                }    
+    </style>
+    </head>
+    <body>
+    <center><br><br>
+        <div>
+            <br><br><br>
+            <form id="form03" enctype="multipart/form-data" action="CreateNote.jsp" method="get">
+               <p style="color: white"> <b>Name:<br><input type="text" name="noteName"><br>
+                       Note:<br><textarea name="noteVal" class="tx"></textarea><br><br></b>
+                   <input type="submit" value="SAVE" class="but"></p>
+            </form>
+        </div>
+    </center>
+    </body>
+</html>
